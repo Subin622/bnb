@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Make a Booking</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 60%;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        input[type="submit"], a {
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+        }
+        a {
+            background-color: #6c757d;
+            color: white;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .room-availability {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Make a Booking</h1>
+    <p><a href="#">Return to the Bookings listing</a> | <a href="#">Return to the main page</a></p>
+
+    <form>
+        <div class="room-availability">
+            <h2>Room Availability Search</h2>
+            <label for="search-checkin">Checkin date:</label>
+            <input type="text" id="search-checkin" name="search-checkin" placeholder="yyyy-mm-dd">
+
+            <label for="search-checkout">Checkout date:</label>
+            <input type="text" id="search-checkout" name="search-checkout" placeholder="yyyy-mm-dd">
+
+            <label for="room-type">Room type:</label>
+            <select id="room-type" name="room-type">
+                <option value="single">Single</option>
+                <option value="double">Double</option>
+                <option value="suite">Suite</option>
+            </select>
+
+            <input type="submit" value="Search Availability">
+        </div>
+
+        <h2>Booking for Test</h2>
+
+        <label for="room">Room (name, type, beds):</label>
+        <select id="room" name="room">
+            <option value="kellie_s_5">Kellie, S, 5</option>
+            <option value="sunrise_d_2">Sunrise, D, 2</option>
+            <option value="moonlight_s_1">Moonlight, S, 1</option>
+            <option value="oceanview_s_3">Oceanview, S, 3</option>
+        </select>
+
+        <label for="checkin">Checkin date:</label>
+        <input type="text" id="checkin" name="checkin" placeholder="yyyy-mm-dd">
+
+        <label for="checkout">Checkout date:</label>
+        <input type="text" id="checkout" name="checkout" placeholder="yyyy-mm-dd">
+
+        <label for="contact">Contact number:</label>
+        <input type="tel" id="contact" name="contact" pattern="\(\d{3}\) \d{3}-\d{4}" placeholder="(###) ###-####" required>
+
+        <label for="extras">Booking extras:</label>
+        <input type="text" id="extras" name="extras">
+
+        <input type="submit" value="Add">
+        <a href="#">Cancel</a>
+    </form>
+</div>
+  
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+    $(function() {
+        $("#checkin, #checkout, #search-checkin, #search-checkout").datepicker({
+            dateFormat: "yy-mm-dd"
+        });
+    });
+</script>
+
+</body>
+</html>
